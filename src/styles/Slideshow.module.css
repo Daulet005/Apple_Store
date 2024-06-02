@@ -1,0 +1,19 @@
+.slideshowContainer {
+    width: 80%;
+    margin: auto;
+}
+
+.eachSlide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 730px; /* Выберите подходящую высоту для слайдов */
+}
+
+.eachSlide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Это свойство сохранит соотношение сторон и масштабирует изображение так, чтобы оно полностью заполняло контейнер */
+}
+
+

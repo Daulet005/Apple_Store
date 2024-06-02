@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.nav a:hover {
+    transform: scale(1.1);
+}
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
