@@ -1,22 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/iphonee.jpg'); /* Путь к вашему фоновому изображению */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Фиксировать фоновое изображение */
+    font-family: Arial, sans-serif; /* Установка шрифта по умолчанию */
+}
+
 .container {
     padding: 20px;
-    max-width: 800px;
     margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 90%;
+    opacity: 0.9; /* Установка прозрачности */
 }
 
 .title {
     font-size: 2em;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .description {
     font-size: 1.2em;
     margin-bottom: 20px;
+    color: #666;
 }
 
 .subtitle {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .contactList {
@@ -27,19 +45,113 @@
 
 .contactList li {
     margin-bottom: 5px;
+    color: #555;
 }
 
 .mapContainer {
     width: 100%;
     height: 400px;
     margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.mapContainer iframe {
-    border: none;
+.mapContainer img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    border-radius: 8px; /* Радиус скругления углов */
 }
-.body {
 
+.aboutUs {
+    margin-bottom: 20px;
+    border-radius: 12px; /* Радиус скругления углов */
+    overflow: hidden; /* Обрезаем фотографии, чтобы они соответствовали радиусу скругления */
+}
+
+.aboutUsTitle {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.aboutUsDescription {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.creatorsPhotos {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравнивание содержимого вверх */
+}
+
+.creatorPhoto {
+    width: 400px; /* Задайте ширину, соответствующую вашим потребностям */
+    height: 400px; /* Фиксированная высота для обеспечения одинакового размера */
+    object-fit: cover; /* Позволяет изображению сохранять пропорции и заполнять контейнер */
+    border-radius: 12px; /* Радиус скругления углов */
+}
+
+.address {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 20px; /* добавляем небольшое отступ сверху */
+}
+
+.contactPage {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.successMessage {
+    color: green;
+    font-size: 16px;
+    margin-bottom: 15px;
 }

@@ -7,10 +7,10 @@ function Header({ cartItemCount }) {
         <header className={styles.header}>
             <h1>Apple Store</h1>
             <nav className={styles.nav}>
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
+                <Link to="/">Главная</Link>
+                <Link to="/about">О нас</Link>
                 <Link to="/gallery">Товары</Link>
-                <Link to="/contact">Контакты</Link>
+                <Link to="/contact">Ремонт</Link>
                 <Link to="/cart">Корзина ({cartItemCount})</Link>
             </nav>
         </header>

@@ -1,53 +1,115 @@
-.contact-page {
-    padding: 20px;
-    max-width: 600px;
+/* Общие стили */
+.repair-service-page {
+    padding: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с прозрачностью 70% */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
 }
 
-.form-group {
-    margin-bottom: 15px;
+.repair-service-page h2 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #333;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+.repair-service-page h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #444;
 }
 
-input,
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.repair-service-page p {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1.5rem;
 }
 
-textarea {
-    resize: vertical;
+/* Секции */
+.repair-service-page .service-info,
+.repair-service-page .warranty-info,
+.repair-service-page .repair-instructions,
+.repair-service-page .care-tips,
+.repair-service-page .faq-section,
+.repair-service-page .authorized-centers {
+    margin-bottom: 3rem;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.repair-service-page .service-info p,
+.repair-service-page .warranty-info p,
+.repair-service-page .repair-instructions p,
+.repair-service-page .care-tips p,
+.repair-service-page .faq-section p,
+.repair-service-page .authorized-centers p {
+    margin-bottom: 1rem;
 }
 
-button:hover {
-    background-color: #45a049;
+/* Сервисные центры */
+.repair-service-page .authorized-centers ul {
+    padding: 0;
+    list-style-type: none;
 }
 
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+.repair-service-page .authorized-centers li {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с прозрачностью 70% */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.success-message {
-    color: green;
-    font-size: 16px;
-    margin-bottom: 15px;
+.repair-service-page .authorized-centers h4 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.repair-service-page .authorized-centers p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* FAQ */
+.repair-service-page .faq-section {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с прозрачностью 70% */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.repair-service-page .faq-section h3 {
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.repair-service-page .faq-section p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Медиа запросы для мобильных устройств */
+@media (max-width: 600px) {
+    .repair-service-page {
+        padding: 1.5rem;
+    }
+
+    .repair-service-page .service-info,
+    .repair-service-page .warranty-info,
+    .repair-service-page .repair-instructions,
+    .repair-service-page .care-tips,
+    .repair-service-page .faq-section,
+    .repair-service-page .authorized-centers {
+        margin-bottom: 2rem;
+    }
+
+    .repair-service-page .authorized-centers li {
+        padding: 1.5rem;
+    }
+
+    .repair-service-page .faq-section {
+        padding: 1.5rem;
+    }
 }

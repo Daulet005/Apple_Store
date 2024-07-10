@@ -2,14 +2,25 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.7); /* Белый цвет с прозрачностью 70% */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px); /* Эффект размытия фона */
+}
+
+.divider {
+    border: none;
+    border-top: 2px solid rgba(255, 255, 255, 0.5); /* Белый цвет с прозрачностью 50% */
+    margin: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.2); /* Прозрачный белый фон */
 }
 
 .hero {
     text-align: center;
     margin-bottom: 4rem;
-    background-image: url('https://celes.club/uploads/posts/2023-03/1679340435_celes-club-p-chernii-fon-na-aifon-instagram-88.jpg');
+    background-image: url('https://sun9-13.userapi.com/impf/t6bTSgr5iz5mF2xUzBFUGWXctrGs4r-yXEkg6g/_ThkhBQDqHQ.jpg?size=1818x606&quality=95&crop=144,0,1200,400&sign=abb90908087fcdf5ef1d59f6dca33b26&type=cover_group');
     background-size: cover;
-    background-position: center;
+    background-position: center bottom; /* изменено на center bottom */
     padding: 4rem;
     border-radius: 10px;
     color: white;
@@ -23,8 +34,8 @@
 }
 
 .hero p {
-    font-size: 1.4rem;
-    color: #f0f0f0;
+    font-size: 1.8rem;
+    color: white;
 }
 
 .features {

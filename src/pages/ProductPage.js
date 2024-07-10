@@ -8,5 +8,3 @@ function ProductPage({ addToCart }) {
 }
 
 export default ProductPage;
-
-

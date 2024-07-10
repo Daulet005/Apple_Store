@@ -1,88 +1,89 @@
-import React, { useState } from 'react';
-import './ContactPage.css';
+import React from 'react';
+import './ContactPage.css'; // Создайте файл стилей для этой страницы
 
-function ContactPage() {
-    const [form, setForm] = useState({ name: '', email: '', message: '' });
-    const [errors, setErrors] = useState({});
-    const [submitted, setSubmitted] = useState(false);
-
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setForm((prevForm) => ({
-            ...prevForm,
-            [name]: value,
-        }));
-        setErrors((prevErrors) => ({
-            ...prevErrors,
-            [name]: ''
-        }));
-    };
-
-    const validateForm = () => {
-        const newErrors = {};
-        if (!form.name) newErrors.name = 'Name is required';
-        if (!form.email) {
-            newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-            newErrors.email = 'Email is invalid';
-        }
-        if (!form.message) newErrors.message = 'Message is required';
-        return newErrors;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const formErrors = validateForm();
-        if (Object.keys(formErrors).length > 0) {
-            setErrors(formErrors);
-        } else {
-            console.log(form);
-            setSubmitted(true);
-            setForm({ name: '', email: '', message: '' });
-        }
-    };
+function RepairServicePage() {
+    const serviceCenters = [
+        {
+            id: 1,
+            name: 'Apple Service Center 1',
+            location: 'Жандосова 55, Город Алматы',
+            phone: '+77715807415',
+            hours: 'Пн-Сб: 10:00 - 18:00'
+        },
+        {
+            id: 2,
+            name: 'Apple Service Center 2',
+            location: 'Абая 48, Город Шымкент',
+            phone: '+77777395522',
+            hours: 'Пн-Пт: 12:00 - 20:00'
+        },
+        // Добавьте другие сервисные центры по мере необходимости
+    ];
 
     return (
-        <div className="contact-page">
-            <h2>Контакты</h2>
-            {submitted && <p className="success-message">Успешно отправлено!</p>}
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Имя:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={form.name}
-                        onChange={handleChange}
-                    />
-                    {errors.name && <p className="error">{errors.name}</p>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={form.email}
-                        onChange={handleChange}
-                    />
-                    {errors.email && <p className="error">{errors.email}</p>}
-                </div>
-                <div className="form-group">
-                    <label htmlFor="message">Отзыв:</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        value={form.message}
-                        onChange={handleChange}
-                    />
-                    {errors.message && <p className="error">{errors.message}</p>}
-                </div>
-                <button type="submit">Submit</button>
-            </form>
+        <div className="repair-service-page">
+            <h2>Ремонт и Обслуживание устройств Apple</h2>
+
+            <div className="service-info">
+                <h3>Услуги Ремонта и Замены</h3>
+                <p>
+                    Мы предлагаем широкий спектр услуг по ремонту и замене компонентов для всех устройств Apple,
+                    включая iPhone, iPad, MacBook, Apple Watch и другие.
+                </p>
+                <p>
+                    Наши сертифицированные специалисты используют только оригинальные компоненты Apple,
+                    чтобы обеспечить качество и долговечность вашего устройства.
+                </p>
+            </div>
+
+            <div className="warranty-info">
+                <h3>Гарантийные Условия</h3>
+                <p>
+                    Все ремонтные работы выполняются в соответствии с гарантийными условиями Apple.
+                    Подробности о гарантии можно узнать у наших специалистов в сервисном центре.
+                </p>
+            </div>
+
+            <div className="authorized-centers">
+                <h3>Авторизованные Сервисные Центры</h3>
+                <ul>
+                    {serviceCenters.map(center => (
+                        <li key={center.id}>
+                            <h4>{center.name}</h4>
+                            <p><strong>Адрес:</strong> {center.location}</p>
+                            <p><strong>Телефон:</strong> {center.phone}</p>
+                            <p><strong>Часы работы:</strong> {center.hours}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="repair-instructions">
+                <h3>Инструкции по Отправке на Ремонт</h3>
+                <p>
+                    Если вы не можете посетить наш сервисный центр лично, вы можете отправить устройство
+                    на ремонт. Следуйте инструкциям на нашем веб-сайте для завершения процесса.
+                </p>
+            </div>
+
+            <div className="care-tips">
+                <h3>Советы по Уходу за Устройствами</h3>
+                <p>
+                    Следуйте простым советам по уходу за устройствами Apple, чтобы продлить их срок службы
+                    и предотвратить повреждения.
+                </p>
+            </div>
+
+            <div className="faq-section">
+                <h3>Часто Задаваемые Вопросы (FAQ)</h3>
+                <p>
+                    Здесь вы можете найти ответы на самые распространенные вопросы о ремонте и обслуживании
+                    устройств Apple.
+                </p>
+            </div>
+
         </div>
     );
 }
 
-export default ContactPage;
+export default RepairServicePage;

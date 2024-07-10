@@ -9,8 +9,12 @@ function ProductDetail({ productId, addToCart }) {
     const handleAddToCart = () => {
         addToCart(product);
         setAddedToCart(true);
-        setTimeout(() => setAddedToCart(false), 2000);  // Скрыть уведомление через 2 секунды
+        setTimeout(() => setAddedToCart(false), 2000);
     };
+
+    if (!product) {
+        return <p>Товар не найден</p>;
+    }
 
     return (
         <div className="product-details-container">
@@ -20,7 +24,7 @@ function ProductDetail({ productId, addToCart }) {
             <div className="product-info-container">
                 <h2>{product.name}</h2>
                 <p>{product.description}</p>
-                <p>${product.price}</p>
+                <p>Цена: {product.price} ₸</p>
                 <h3>Характеристики</h3>
                 <ul className="specifications-list">
                     {Object.entries(product.specs).map(([key, value]) => (
@@ -30,11 +34,10 @@ function ProductDetail({ productId, addToCart }) {
                     ))}
                 </ul>
                 <button onClick={handleAddToCart}>Добавить в корзину</button>
-                {addedToCart && <p className="added-to-cart-notification">Добавлен товар!!!!!!</p>}
+                {addedToCart && <p className="added-to-cart-notification">Товар добавлен в корзину!</p>}
             </div>
         </div>
     );
 }
 
 export default ProductDetail;
-

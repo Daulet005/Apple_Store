@@ -3,23 +3,37 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
+import AboutPage from './pages/AboutContactPage';
 import GalleryPage from './pages/GalleryPage';
 import ProductPage from './pages/ProductPage';
 import ContactPage from './pages/ContactPage';
 import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+
+import products from './data/products';
 
 function App() {
     const [cartItems, setCartItems] = useState([]);
 
     const addToCart = (product) => {
-        setCartItems((prevItems) => [...prevItems, { ...product, hidden: false }]);
+        const existingIndex = cartItems.findIndex(item => item.id === product.id);
+        if (existingIndex !== -1) {
+            const updatedCartItems = [...cartItems];
+            updatedCartItems[existingIndex] = { ...updatedCartItems[existingIndex], quantity: updatedCartItems[existingIndex].quantity + 1 };
+            setCartItems(updatedCartItems);
+        } else {
+            setCartItems(prevItems => [...prevItems, { ...product, hidden: false, quantity: 1 }]);
+        }
     };
 
-    const hideItemInCart = (index) => {
-        setCartItems((prevItems) =>
-            prevItems.map((item, i) => (i === index ? { ...item, hidden: true } : item))
-        );
+    const removeFromCart = (index) => {
+        const updatedCartItems = [...cartItems];
+        updatedCartItems.splice(index, 1);
+        setCartItems(updatedCartItems);
+    };
+
+    const clearCart = () => {
+        setCartItems([]);
     };
 
     return (
@@ -32,7 +46,11 @@ function App() {
                     <Route path="/gallery" element={<GalleryPage />} />
                     <Route path="/product/:id" element={<ProductPage addToCart={addToCart} />} />
                     <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/cart" element={<CartPage cartItems={cartItems} hideItemInCart={hideItemInCart} />} />
+                    <Route
+                        path="/cart"
+                        element={<CartPage cartItems={cartItems} removeFromCart={removeFromCart} clearCart={clearCart} />}
+                    />
+                    <Route path="/checkout" element={<CheckoutPage />} />
                 </Routes>
                 <Footer />
             </div>
@@ -41,4 +59,4 @@ function App() {
 }
 
 export default App;
-
+//emailjs.send('FrontEnd', 'FrontEnd', templateParams, 'j9GjAO6-ZR3h_5jvV') await emailjs.send('Front', 'template_b2qpfrn', templateParams, 'j9GjAO6-ZR3h_5jvV');

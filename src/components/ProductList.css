@@ -12,7 +12,7 @@ html, body {
     padding: 20px;
     box-sizing: border-box;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: 100%;
     background-color: #f5f5f5;
     justify-items: center;
     align-items: center;
@@ -69,4 +69,7 @@ html, body {
     font-size: 16px;
     color: #888;
 }
-
+.product-list {
+    background-color: rgba(245, 245, 245, 0.8); /* Более прозрачный серый фон */
+    /* Остальные стили остаются без изменений */
+}
