@@ -1,0 +1,65 @@
+/* SignUpPage.module.css */
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.registrationForm {
+    background-color: #fff;
+    width: 500px;
+    padding: 60px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 450px;
+}
+
+.title {
+    color: #262626;
+    margin-bottom: 30px;
+}
+
+.input {
+    width: 100%;
+    padding: 16px;
+    margin-bottom: 30px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submitButton {
+    background-color: #0095f6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 16px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submitButton:hover {
+    background-color: #0077c0;
+}
+
+.registrationImage {
+    flex: 1;
+}
+
+.registrationImage img {
+    width: 55%;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin-left: 350px;
+}
