@@ -8,6 +8,36 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Эффект размытия фона */
 }
+.repair-service-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.imei-check-section {
+    margin-bottom: 20px;
+}
+
+.imei-check-section label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.imei-check-section input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+.imei-check-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.status-message {
+    margin-top: 20px;
+    font-size: 18px;
+}
 
 .repair-service-page h2 {
     font-size: 3.5rem;

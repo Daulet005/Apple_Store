@@ -1,11 +1,11 @@
-// SignUpPage.js
+// src/pages/SignUpPage.js
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/SignUpPage.module.css'; // Импортируем стили
 
 const SignUpPage = () => {
-    const [username, setUsername] = useState('');
+    const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [lname, setLname] = useState('');
     const [fname, setFname] = useState('');
@@ -15,43 +15,38 @@ const SignUpPage = () => {
     const handleSignUp = (e) => {
         e.preventDefault();
 
-        // Создаем объект Buyer
-        const buyer = {
-            login: username,
-            password: password,
-            lname: lname,
-            fname: fname,
-            email: email
+        // Создаем объект пользователя
+        const newUser = {
+            username: login,    // Изменено с `login` на `username`
+            password,
+            lastName: lname,    // Изменено с `lname` на `lastName`
+            firstName: fname,   // Изменено с `fname` на `firstName`
+            email
         };
 
-        // Отправляем AJAX-запрос на сервер для регистрации нового пользователя
-        registerUser(buyer);
-    };
-
-    const registerUser = (buyer) => {
-        fetch("/buyers/registration", {
-            method: "POST",
+        // Отправляем данные на сервер для регистрации
+        fetch('http://localhost:5000/buyers/registration', {
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json',
             },
-            body: JSON.stringify(buyer)
+            body: JSON.stringify(newUser),
         })
             .then(response => {
-                if (response.status === 201) {
-                    // Выводим сообщение о успешной регистрации
-                    alert("Пользователь успешно зарегистрирован");
+                if (response.ok) {
+                    alert('Пользователь успешно зарегистрирован');
                     navigate('/login');
                 } else {
-                    // Выводим сообщение об ошибке регистрации
-                    alert("Ошибка при регистрации пользователя");
+                    return response.text().then(text => {
+                        throw new Error(text);
+                    });
                 }
             })
             .catch(error => {
                 console.error('Ошибка:', error);
-                alert("Произошла ошибка при выполнении запроса");
+                alert('Произошла ошибка при регистрации пользователя');
             });
     };
-
 
     return (
         <div className={styles.container}>
@@ -62,10 +57,10 @@ const SignUpPage = () => {
                 <h2 className={styles.title}>Регистрация</h2>
                 <input
                     type="text"
-                    id="username"
+                    id="login"
                     placeholder="Имя пользователя"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={login}
+                    onChange={(e) => setLogin(e.target.value)}
                     className={styles.input}
                     required
                 />

@@ -1,22 +1,27 @@
-// src/components/LoginPage.js
-
+// src/pages/LoginPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from '../styles/LoginPage.module.css'; // Импортируем стили
 import loginImage from '../assets/iphonee.jpg'; // Путь к вашему изображению для фотографии
+import { authenticateUser } from '../components/auth'; // Импортируйте функцию проверки
 
 const LoginPage = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
-        // Ваша логика входа здесь
 
-        alert('Вход выполнен успешно!');
-        onLogin(username, password);
-        navigate('/'); // Переход на главную страницу после входа
+        // Проверка учетных данных
+        if (authenticateUser(username, password)) {
+            alert('Вход выполнен успешно!');
+            onLogin(username); // Передайте только имя пользователя
+            navigate('/'); // Переход на главную страницу после входа
+        } else {
+            setError('Неверное имя пользователя или пароль');
+        }
     };
 
     return (
@@ -47,6 +52,7 @@ const LoginPage = ({ onLogin }) => {
                             required
                         />
                     </div>
+                    {error && <p className={styles.error}>{error}</p>}
                     <button className={styles.submitButton} type="submit">
                         Войти
                     </button>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import styles from '../styles/AboutPage.module.css'; // Импортируем стили
+import styles from '../styles/AboutPage.module.css';
 import mapScreenshot from '../assets/map_screenshot.jpg.png';
-import creator1 from '../assets/Zhans.jpg';
 import creator2 from '../assets/Dake.jpg';
-import emailjs from 'emailjs-com'; // Импортируем emailjs
+import emailjs from 'emailjs-com';
 
 function AboutContactPage() {
     const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -70,14 +69,9 @@ function AboutContactPage() {
                     </p>
                     <div className={styles.creatorsPhotos}>
                         <div className={styles.creatorInfo}>
-                            <img src={creator1} alt="Фото создателя 1" className={styles.creatorPhoto}/>
-                            <h3 className={styles.creatorName}>Жансерик Олжабаев</h3>
-                            <p className={styles.creatorBio}>Первый разработчик сайта</p>
-                        </div>
-                        <div className={styles.creatorInfo}>
                             <img src={creator2} alt="Фото создателя 2" className={styles.creatorPhoto}/>
                             <h3 className={styles.creatorName}>Жамият Даулет</h3>
-                            <p className={styles.creatorBio}>Второй разработчик сайта</p>
+                            <p className={styles.creatorBio}>Владелец магазина Apple Store</p>
                         </div>
                     </div>
                 </div>
@@ -85,7 +79,7 @@ function AboutContactPage() {
 
             <h3 className={styles.subtitle}>Наши контакты</h3>
             <ul className={styles.contactList}>
-                <li>Телефон: +7085133003</li>
+                <li>Телефон: +7 (771) 580 74 15</li>
                 <li>Email: dauletzamiat@gmail.com</li>
                 <li>Instagram: <a href="https://instagram.com/applestore" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}> @applestore</a></li>
             </ul>

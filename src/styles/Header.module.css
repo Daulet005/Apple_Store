@@ -1,3 +1,5 @@
+/* Header.module.css */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -5,37 +7,14 @@
     background-color: #333;
     color: white;
     padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.nav {
-    display: flex;
-    gap: 1rem;
+.header:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-}
-
-h1 {
-    margin: 0;
-    font-size: 1.5rem;
-}
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform 0.3s ease;
-}
-
-.nav a:hover {
-    transform: scale(1.1);
-}
 .header h1 {
     margin: 0;
     font-size: 1.5rem;
@@ -47,6 +26,68 @@ h1 {
         transform: scale(1);
     }
     to {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    margin-left: 117px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav a:hover {
+    background-color: black;
+}
+
+.nav a:focus {
+    outline: none;
+}
+
+.nav a:active {
+    transform: scale(0.95);
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+}
+
+.loggedIn,
+.loggedOut {
+    margin-left: 1rem;
+}
+
+.loggedIn span {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.loggedOut a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.loggedOut a:hover {
+    background-color: black;
+}
+
+.loggedOut a:focus {
+    outline: none;
+}
+
+.loggedOut a:active {
+    transform: scale(0.95);
 }

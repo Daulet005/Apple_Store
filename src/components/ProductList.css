@@ -1,3 +1,4 @@
+/* Общие стили для html и body */
 html, body {
     height: 100%;
     margin: 0;
@@ -5,71 +6,94 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: #f5f5f5;
-    justify-items: center;
-    align-items: center;
-}
-
-.product-item {
-    list-style-type: none;
-    margin: 0;
-    padding: 15px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+/* Стили для внешнего контейнера списка продуктов */
+.product-list-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Светлый серый фон */
+    height: 100%;
+}
+
+/* Стили для контейнера поиска */
+.search-container {
     width: 100%;
-    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+/* Стили для поля ввода поиска */
+.search-input {
+    width: 100%;
+    padding: 12px; /* Немного увеличил внутренний отступ для удобства ввода */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease; /* Плавная анимация при изменении границы */
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: black; /* Цвет обводки при фокусе */
+}
+
+/* Стили для контейнера списка продуктов */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивные колонки */
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px; /* Максимальная ширина списка */
+}
+
+/* Стили для элемента продукта */
+.product-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden; /* Обрезаем содержимое, чтобы скругленные углы корректно отображались */
 }
 
 .product-item:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px); /* Легкий подъем при наведении */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Стили для ссылки продукта */
 .product-link {
+    display: block;
     text-decoration: none;
     color: inherit;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
+/* Стили для изображения продукта */
 .product-image {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 200px; /* Фиксированная высота изображения */
     object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
+/* Стили для информации о продукте */
 .product-info {
-    margin-top: 10px;
+    padding: 20px; /* Больший внутренний отступ */
 }
 
+/* Стили для названия продукта */
 .product-name {
-    font-size: 18px;
-    margin: 5px 0;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
+/* Стили для цены продукта */
 .product-price {
-    font-size: 16px;
-    color: #888;
-}
-.product-list {
-    background-color: rgba(245, 245, 245, 0.8); /* Более прозрачный серый фон */
-    /* Остальные стили остаются без изменений */
+    font-size: 18px;
+    color: #008000; /* Цвет цены */
+    font-weight: bold;
 }
